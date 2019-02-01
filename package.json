@@ -1,0 +1,33 @@
+{
+  "name": "localization-tutorial-typescript",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0",
+    "react-intl": "^2.8.0",
+    "react-scripts-ts": "3.1.0"
+  },
+  "scripts": {
+    "start": "react-scripts-ts start",
+    "build": "react-scripts-ts build",
+    "test": "react-scripts-ts test --env=jsdom",
+    "eject": "react-scripts-ts eject",
+    "trans:compile": "tsc -p . --target ES6 --module es6 --jsx preserve --outDir src/extracted",
+    "trans:extract": "babel ./src/extracted",
+    "trans:manage": "node src/translations/manageTranslations.js",
+    "trans:clean": "rm -r ./src/extracted",
+    "trans": "npm run trans:compile && npm run trans:extract && npm run trans:manage && npm run trans:clean"
+  },
+  "devDependencies": {
+    "@types/jest": "^23.3.13",
+    "@types/node": "^10.12.18",
+    "@types/react": "^16.7.21",
+    "@types/react-dom": "^16.0.11",
+    "@types/react-intl": "^2.3.15",
+    "babel-plugin-react-intl": "^3.0.1",
+    "babel-preset-es2015": "^6.24.1",
+    "react-intl-translations-manager": "^5.0.3",
+    "typescript": "^3.2.4"
+  }
+}
