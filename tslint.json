@@ -8,10 +8,13 @@
     "object-literal-sort-keys": false,
     "ordered-imports": false,
     "interface-name" : [true, "never-prefix"],
-    "no-unused-expression": false
+    "no-unused-expression": false,
+    "no-console": false
   },
   "jsRules": {
-    "object-literal-sort-keys": false
+    "object-literal-sort-keys": false,
+    "no-console": false,
+    "no-shadowed-variable": false
   },
   "linterOptions": {
     "exclude": [

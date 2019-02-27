@@ -1,6 +1,5 @@
 import * as React from 'react';
 import App from './App';
-import * as locale_en from 'react-intl/locale-data/en';
 import * as locale_de from 'react-intl/locale-data/de';
 import * as locale_fr from 'react-intl/locale-data/fr';
 import * as locale_ar from 'react-intl/locale-data/ar';
@@ -11,7 +10,7 @@ import * as messages_de from './translations/locales/de.json';
 import * as messages_zh from './translations/locales/zh.json';
 import { IntlProvider, addLocaleData } from 'react-intl';
 
-addLocaleData([...locale_en, ...locale_de, ...locale_ar, ...locale_fr, ...locale_zh]);
+addLocaleData([...locale_de, ...locale_ar, ...locale_fr, ...locale_zh]);
 
 interface State { locale: string }
 
@@ -28,7 +27,7 @@ class LanguageContainer extends React.Component<{}, State> {
         super(props);
 
         this.state = {
-            locale: 'en'
+            locale: navigator.language
         }
     }
 
@@ -40,6 +39,7 @@ class LanguageContainer extends React.Component<{}, State> {
 
     public render() {
         const msg = messages[this.state.locale];
+        console.log('here: ', navigator.language);
 
         return (
             <IntlProvider key={this.state.locale} locale={this.state.locale} messages={msg}>

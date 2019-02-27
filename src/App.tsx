@@ -39,7 +39,8 @@ class App extends React.Component<Props> {
         <p className="App-intro">
           <FormattedMessage
             id="localization-dropdown-description"
-            defaultMessage={'To change the language of the application, select one of the supported languaged in this dropdown'}
+            defaultMessage='To change the language of the application, select one of the supported languaged in this dropdown'
+            description='Dropdown to change locale'
           />
         </p>
         <select onChange={this.handleChange} name="select language" value={this.props.currentLocale}>

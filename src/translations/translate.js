@@ -1,3 +1,4 @@
+/* tslint:disable */
 /*
  * This script utilizes Microsoft's translation API to translate English to
  * other languages. It will be used to implement localization.
@@ -47,7 +48,9 @@ const translate = async () => {
         }
 
         fs.writeFile(localeFile, JSON.stringify(transData, null, 2), (err) => {
-            if (err) return console.log(err);
+            if (err) {
+                return console.log(err);
+            }
             console.log('writing to ' + localeFile);
             console.log(transData);
         });
@@ -55,9 +58,7 @@ const translate = async () => {
 }
 
 /*
- * Parses locales created by react-intl-manager and create a JSON
- * that tells us whether a language is written from left to right
- * or right to left
+ * Parses locales created by react-intl-manager
  */
 const parseLocales = (localesFolder) => {
     let locales = [];
